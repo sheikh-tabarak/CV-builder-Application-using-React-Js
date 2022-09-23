@@ -1,12 +1,14 @@
 import React from 'react'
 
+
+
 export default function editor() {
   return (
 
     <>
 
 
-<div class="container">
+<div class="container-fluid">
   <div class="row ">
     <div class="col bg-light p-5" >
 

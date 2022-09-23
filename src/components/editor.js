@@ -1,3 +1,5 @@
+
+//jbjkb
 import React from 'react'
 
 export default function editor() {
@@ -10,7 +12,7 @@ export default function editor() {
     <div class="col bg-light p-5" >
 
 
-    <div class="row">
+    <div class="row"> 
   <div class="col-5">
   <div class="custom-file">
   <input type="file" class="custom-file-input" id="customFile"/>

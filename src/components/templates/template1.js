@@ -19,43 +19,20 @@ export default function template1(props) {
 
     <body>
 
-    <a href="#shortExampleAnswer1collapse" data-mdb-toggle="collapse" aria-expanded="false"
-    aria-controls="shortExampleAnswer1collapse" class="list-group-item list-group-item-action">
-
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Question 1</h5>
-    </div>
-    <p class="mb-1">
-      Short & concise version of the answer.
-    </p>
-    <small><u>Learn more</u></small>
-   
-    <div class="collapse mt-3" id="shortExampleAnswer1collapse">
-      Detailed and comprehensive answer goes here. pariatur cliche reprehenderit, enim eiusmod
-      high
-      life accusamus terry richardson ad
-      squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-      sapiente ea proident.
-    </div>
-  </a>
-  
-
-
-
-  {/* <div class="wrapper mt-lg-5"> */}
+  {/**/} <div class="wrapper"> 
         <div class="sidebar-wrapper">
             <div class="profile-container">
 
                 <img class="profile" src={props.uploadedimage} alt="" />
                 <h1 class="name">{props.name}</h1>
-                <h3 class="tagline">Full Stack Developer</h3>
+                <h3 class="tagline">{props.headline}</h3>
             </div>
            
             <div class="contact-container container-block">
                 <ul class="list-unstyled contact-list">
-                    <li class="email"><i class="fa-solid fa-envelope"></i><a href="mailto: yourname@email.com">alan.doe@website.com</a></li>
-                    <li class="phone"><i class="fa-solid fa-phone"></i><a href="tel:0123 456 789">0123 456 789</a></li>
-                    <li class="website"><i class="fa-solid fa-globe"></i><a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/orbit-free-resume-cv-bootstrap-theme-for-developers/" target="_blank">portfoliosite.com</a></li>
+                    <li class="email"><i class="fa-solid fa-envelope"></i><a href="mailto: yourname@email.com">{props.email}</a></li>
+                    <li class="phone"><i class="fa-solid fa-phone"></i><a href="tel:0123 456 789">{props.phone}</a></li>
+                    <li class="website"><i class="fa-solid fa-globe"></i><a href={props.website} target="_blank">{props.website}</a></li>
                     <li class="linkedin"><i class="fa-brands fa-linkedin-in"></i><a href="#" target="_blank">linkedin.com/in/alandoe</a></li>
                     <li class="github"><i class="fa-brands fa-github"></i><a href="#" target="_blank">github.com/username</a></li>
                     <li class="twitter"><i class="fa-brands fa-twitter"></i><a href="https://twitter.com/3rdwave_themes" target="_blank">@twittername</a></li>
@@ -212,7 +189,7 @@ export default function template1(props) {
       </div>
 
 
-         {/*
+        
     </div>
  
     <footer class="footer">
@@ -222,7 +199,7 @@ export default function template1(props) {
 }
         </div>
     </footer>
-        */} 
+        {/* */} 
 </body>
 
 

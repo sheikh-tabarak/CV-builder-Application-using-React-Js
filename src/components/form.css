@@ -1,0 +1,118 @@
+
+  
+    .custom-file-input{
+  
+      height:130px;
+      width:130px;
+      border-radius: 100px;
+      position:relative;
+      
+      display:flex;
+      justify-content:center;
+      align-items: center;  
+  
+      /* border:0px solid #000000; */
+      overflow:hidden;
+      background-image: linear-gradient(to bottom, #2590EB 50%, #FFFFFF 50%);
+      /* background-image: url("https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620?k=20&m=1300845620&s=612x612&w=0&h=f4XTZDAv7NPuZbG0habSpU0sNgECM0X7nbKzTUta3n8="); */
+      background-size: 100% 100%;
+      
+      /* transition: all 1s; */
+      color: #FFFFFF;
+      font-size:0px;
+    }
+    .custom-file-input input[type='file']{
+  
+        height:100px;
+        width:100px;
+        position:absolute;
+        top:0;
+        left:0;
+        opacity:0;
+        cursor:pointer;
+  
+      }
+  
+      .custom-file-input:hover{
+  
+        background-position: 10 130%;
+        cursor:pointer;
+        color:#2590EB;
+  
+      }
+  
+.sidebar{
+
+  overflow:scroll;
+  position:fixed;
+  overflow: visible;
+  right: 0px;
+  top: 0px;
+
+
+  
+  background-color: #F7F7F7;
+  width: 350px;
+  padding-left: 30px;
+ 
+  padding-top:180px;
+  height: 100%;
+
+  
+}
+
+.sidebar-toggles{
+  
+  font-size: 14px;
+  line-height: 42px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+ 
+}
+
+summary.sidebar-toggles:hover{
+  cursor: hand;
+}
+
+
+.sidebar-item{
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 18.4px;
+  margin: 10px 0px 0px 0px;
+}
+
+.sidebar-item a{
+  cursor: hand;
+  padding-left: 15px;
+  text-decoration: none;
+  color:rgb(26, 26, 26);
+  font-size: 16px;
+  font-weight: 400;
+  border: solid #F7F7F7;
+  border-width: 0px 0px 0px 3px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.sidebar-item a:active{
+  text-decoration: none;
+  color:rgb(26, 26, 26);
+  font-size: 16px;
+  font-weight: 600;
+  border: solid #61DAFB;
+  border-width: 0px 0px 0px 3px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar-item a:hover{
+  cursor: hand;
+  text-decoration: none;
+  color:rgb(26, 26, 26);
+  font-size: 16px;
+  font-weight: 600;
+  border: solid #61DAFB;
+  border-width: 0px 0px 0px 3px;
+  font-family: Arial, Helvetica, sans-serif;
+}

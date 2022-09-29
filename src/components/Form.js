@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import Template1 from "./templates/template1";
+import Template1 from "./templates/template1/template1";
 import ".//form.css";
 
+
 export default function Form() {
+  
   // const realimage = (
   //   <img
   //     src={imageu}
@@ -12,7 +14,7 @@ export default function Form() {
 
   const [cv, setcv] = useState({
     image:
-      "https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620?k=20&m=1300845620&s=612x612&w=0&h=f4XTZDAv7NPuZbG0habSpU0sNgECM0X7nbKzTUta3n8=",
+      "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=2000",
     name: "",
     website:"",
     headline: "",
@@ -20,56 +22,88 @@ export default function Form() {
     phone: "",
   });
 
-  const handleChange = (e) => {
-    setcv({
 
-   //   [e.target.name]: e.target.value,
-      // [e.target.website]:e.target.value,
-      // headline: e.target.value,
-      // email: e.target.value,
-      // phone: e.target.value,
-      
-      [e.target.name]: e.target.value       // changing the state of *changed value*
+  const changeHandler = (e) => {
+
+    // setcv({
+    //   ...cv,                                // spreading the unchanged values
+    //   [e.target.name]: e.target.value,          // changing the state of *changed value*
+    // });
+
+
+    setcv( cv => {
+      return { ...cv,[e.target.name]: e.target.value}
     })
-    
+ }
+
+/*
+    setcv( cv => {
+      return { ...cv,[e.target.name]: e.target.value}
+   })
+
+   setcv({...cv, [e.target.name]: e.target.value})
+
+
+  const handleClick = (item_id,e)=> {
+    [cv.item_id]=e;
+  };
+  
+  const Setname = (e) => {
+      setcv({name:e.target.value});
   };
 
-  
+  const Setemail= (e) => {
+      setcv({email: e.target.value});
+  };
+*/
 
-  const [imageu, setImage] = useState(
-    "https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620?k=20&m=1300845620&s=612x612&w=0&h=f4XTZDAv7NPuZbG0habSpU0sNgECM0X7nbKzTUta3n8="
-  );
 
-  const [Name, SetName] = useState("");
+  const [imageu, setImage] = useState("https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=2000");
+  const [name, SetName] = useState("");
+  const [email, SetEmail] = useState("");
+  const [website, SetWebsite] = useState("");
+  const [headline, SetHeadline] = useState("");
+  const [phone, SetPhone] = useState("");
 
   const ChangeName = (event) => {
     SetName(event.target.value);
   };
 
+  const ChangeEmail = (event) => {
+    SetEmail(event.target.value);
+  };
+
+  const ChangeWebsite = (event) => {
+    SetWebsite(event.target.value);
+  };
+
+  const ChangeHeadline = (event) => {
+    SetHeadline(event.target.value);
+  };
+  
+   const ChangePhone = (event) => {
+    SetPhone(event.target.value);
+  };
+
+
   return (
     <>
-      <details>
-        <summary className="sidebar-toggles">{cv.name}</summary>
-        <div className="sidebar-item">
-          <a href="#">Getting Started</a>
-        </div>
-        <div className="sidebar-item">
-          <a href="#">Add React to a Website</a>
-        </div>
-        <div className="sidebar-item">
-          <a href="#">Create a New React App</a>
-        </div>
-        <div className="sidebar-item">
-          <a href="#">CDN Links</a>
-        </div>
-        <div className="sidebar-item">
-          <a href="#">Release Channels</a>
-        </div>
-      </details>
+<nav class="p-3 navbar fixed navbar-dark bg-dark">
+<a class="navbar-brand" href="#">Tech Legion </a>
+
+  
+</nav>
+
+
+
 
       <div class="container-fluid">
         <div class="row ">
-          <div className="  col-4 bg-light p-5">
+         
+          <div className="col-4 bg-light p-0 m-0">
+          <details>
+          <summary className="text sidebar-toggles">&nbsp;Introduction</summary>
+          <div className="p-4">
             <div class="row">
               <div class="col-5">
                 <div class="custom-file">
@@ -97,8 +131,8 @@ export default function Form() {
                     <div class="form-group m-1">
                       <label for="gname">Name</label>
                       <input
-                        value={cv.name}
-                        onChange={handleChange}
+                     value={name}
+                        onChange={ChangeName}
                         type="text"
                         class="form-control"
                         id="gname"
@@ -110,8 +144,8 @@ export default function Form() {
                   <div class="form-group m-1">
                     <label for="fname">Website</label>
                     <input
-                      value={cv.website}
-                      onChange={handleChange}
+                     value={website}
+                onChange={ChangeWebsite}
                       type="text"
                       class="form-control"
                       id="fname"
@@ -129,6 +163,8 @@ export default function Form() {
                   type="email"
                   class="form-control"
                   id="email"
+                  value={email}
+                  onChange={ChangeEmail}
                   aria-describedby="emailHelp"
                 />
               </div>
@@ -136,6 +172,8 @@ export default function Form() {
               <div class="form-group m-1 mb-3">
                 <label for="headline">Headline</label>
                 <input
+                 value={headline}
+                 onChange={ChangeHeadline}
                   type="text"
                   class="form-control"
                   id="headline"
@@ -144,7 +182,11 @@ export default function Form() {
               </div>
               <div class="form-group m-1  mb-3">
                 <label for="pnumber">Phone number</label>
-                <input type="number" class="form-control" id="pnumber" />
+                
+                <input 
+                value={phone}
+                onChange={ChangePhone}
+                type="number" class="form-control" id="pnumber" />
               </div>
               <div class="form-group m-1  mb-3">
                 <label for="address">Address</label>
@@ -156,6 +198,7 @@ export default function Form() {
                   <div class="form-group m-1">
                     <label for="pcode">Post code</label>
                     <input
+
                       type="number"
                       class="form-control"
                       id="pcode"
@@ -176,21 +219,107 @@ export default function Form() {
                 </div>
               </div>
             </form>
+            </div>
+          </details>
+
+
+
+          <details>
+          <summary className="sidebar-toggles">&nbsp;Experience</summary>
+          <div className="p-4">
+            
+
+            <form>
+              <div class="form-group m-1">
+                <label for="email">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  value={email}
+                  onChange={ChangeEmail}
+                  aria-describedby="emailHelp"
+                />
+              </div>
+
+              <div class="form-group m-1 mb-3">
+                <label for="headline">Headline</label>
+                <input
+                 value={headline}
+                 onChange={ChangeHeadline}
+                  type="text"
+                  class="form-control"
+                  id="headline"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="form-group m-1  mb-3">
+                <label for="pnumber">Phone number</label>
+                
+                <input 
+                value={phone}
+                onChange={ChangePhone}
+                type="number" class="form-control" id="pnumber" />
+              </div>
+              <div class="form-group m-1  mb-3">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" />
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <div class="form-group m-1">
+                    <label for="pcode">Post code</label>
+                    <input
+
+                      type="number"
+                      class="form-control"
+                      id="pcode"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group m-1">
+                    <label for="city">City</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="city"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+            </div>
+          </details>
+
+
+
+
+
           </div>
-          <div className="col-8 overflow-auto">
+           
+
+          <div className="cvpreview col-8 overflow-auto">
+
             <Template1
               uploadedimage={imageu}
-              name={cv.name}
-              website={cv.website}
-              headline={cv.headline}
-              email={cv.email}
-              phone={cv.phone}
+              name={name}
+           website={website}
+           headline={headline}
+              email={email}
+             phone={phone}
 
               
             />
           </div>
         </div>
       </div>
+
+      <div class="p-3 text-center bg-dark text-white">© 2022 Copyrights <strong><a className="text-white" href="https://techlegion.ml">Tech Legion</a></strong> | All Rights Reserved</div>
     </>
   );
-}
+                  
+                  }

@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 import ".//template1style.css";
+import Experience from "./experience";
+
 
 
 
 
 export default function template1(props) {
 
-
+var website = "https://"+props.website+"?target=”_blank”";
+var email = "mailto:"+props.email;
+var phone = "tel:"+props.phone;
+//const website = useState(web);
+ 
   return (
 
 
@@ -30,9 +36,9 @@ export default function template1(props) {
            
             <div class="contact-container container-block">
                 <ul class="list-unstyled contact-list">
-                    <li class="email"><i class="fa-solid fa-envelope"></i><a href="mailto: yourname@email.com">{props.email}</a></li>
-                    <li class="phone"><i class="fa-solid fa-phone"></i><a href="tel:0123 456 789">{props.phone}</a></li>
-                    <li class="website"><i class="fa-solid fa-globe"></i><a href={props.website} target="_blank">{props.website}</a></li>
+                    <li class="email"><i class="fa-solid fa-envelope"></i><a href={email}>{props.email}</a></li>
+                    <li class="phone"><i class="fa-solid fa-phone"></i><a href={phone}>{props.phone}</a></li>
+                    <li class="website"><i class="fa-solid fa-globe"></i><a href={website} target="_blank">{props.website}</a></li>
                     <li class="linkedin"><i class="fa-brands fa-linkedin-in"></i><a href="#" target="_blank">linkedin.com/in/alandoe</a></li>
                     <li class="github"><i class="fa-brands fa-github"></i><a href="#" target="_blank">github.com/username</a></li>
                     <li class="twitter"><i class="fa-brands fa-twitter"></i><a href="https://twitter.com/3rdwave_themes" target="_blank">@twittername</a></li>
@@ -78,26 +84,16 @@ export default function template1(props) {
 
         <div className="main-wrapper">
         <section className="section summary-section">
-          <h2 className="section-title"><span className="icon-holder"><i className="fa-solid fa-user" /></span>Career Profile</h2>
+          <h2 className="section-title">About Me</h2>
           <div className="summary">
-            <p>Summarise your career here lorem ipsum dolor sit amet, consectetuer adipiscing elit. You can <a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/orbit-free-resume-cv-bootstrap-theme-for-developers/" target="_blank">download this free resume/CV template here</a>. Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.</p>
+          <p>{props.aboutme}</p>
           </div>
         </section>
         <section className="section experiences-section">
-          <h2 className="section-title"><span className="icon-holder"><i className="fa-solid fa-briefcase" /></span>Experiences</h2>
-          <div className="item">
-            <div className="meta">
-              <div className="upper-row">
-                <h3 className="job-title">Lead Developer</h3>
-                <div className="time">2022 - Present</div>
-              </div>
-              <div className="company">Startup Hubs, San Francisco</div>
-            </div>
-            <div className="details">
-              <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.</p>  
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-            </div>
-          </div>
+        <h2 className="section-title">Experiences</h2>
+          
+          <Experience jobtitle="test" startdate="11" enddate="end" company="company" desc="desc"/>
+
           <div className="item">
             <div className="meta">
               <div className="upper-row">
@@ -107,7 +103,7 @@ export default function template1(props) {
               <div className="company">Google, London</div>
             </div>
             <div className="details">
-              <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>  
+              <p>Test Description</p>  
             </div>
           </div>
           <div className="item">
@@ -119,12 +115,12 @@ export default function template1(props) {
               <div className="company">Amazon, London</div>
             </div>
             <div className="details">
-              <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>  
-            </div>
+            <p>Test Description</p> 
+          </div>
           </div>
         </section>
         <section className="section projects-section">
-          <h2 className="section-title"><span className="icon-holder"><i className="fa-solid fa-archive" /></span>Projects</h2>
+          <h2 className="section-title">Projects</h2>
           <div className="intro">
             <p>You can list your side projects or open source libraries in this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.</p>
           </div>
@@ -186,31 +182,21 @@ export default function template1(props) {
             </div>
           </div>  
         </section>
-      </div>
-
-
-        
+      </div> 
     </div>
  
-    <footer class="footer">
+    
         <div class="text-center">
            
-     {//    <small class="copyright">Designed with <i class="fa-solid fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+     {    <small class="copyright">Designed with <i class="fa-solid fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
 }
         </div>
-    </footer>
+  
         {/* */} 
 </body>
 
 
     <div>
-
-
-
-   
-    <img src="" alt="" />
-    <div>{props.name}</div> 
-    
     </div>
     </>
     

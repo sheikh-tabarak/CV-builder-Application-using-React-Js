@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Template1 from "./templates/template1/template1";
 import ".//form.css";
+import Header from "./header/header";
 
 
 export default function Form() {
@@ -64,6 +65,8 @@ export default function Form() {
   const [website, SetWebsite] = useState("");
   const [headline, SetHeadline] = useState("");
   const [phone, SetPhone] = useState("");
+  const [aboutme, SetAboutme] = useState("");
+
 
   const ChangeName = (event) => {
     SetName(event.target.value);
@@ -86,15 +89,15 @@ export default function Form() {
   };
 
 
+  const ChangeAboutme= (event) => {
+    SetAboutme(event.target.value);
+  };
+
   return (
     <>
-<nav class="p-3 navbar fixed navbar-dark bg-dark">
-<a class="navbar-brand" href="#">Tech Legion </a>
-
-  
-</nav>
 
 
+<Header/>
 
 
       <div class="container-fluid">
@@ -189,8 +192,12 @@ export default function Form() {
                 type="number" class="form-control" id="pnumber" />
               </div>
               <div class="form-group m-1  mb-3">
-                <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" />
+                <label for="address">About you</label>
+                <input 
+                value={aboutme}
+               onChange={ChangeAboutme}
+                 type="text" class="form-control" id="address" />
+                
               </div>
 
               <div class="row">
@@ -311,6 +318,7 @@ export default function Form() {
            headline={headline}
               email={email}
              phone={phone}
+             aboutme={aboutme}
 
               
             />

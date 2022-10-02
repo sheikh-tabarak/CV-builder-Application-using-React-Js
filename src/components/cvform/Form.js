@@ -1,17 +1,42 @@
 import React, { useState } from "react";
-import Template1 from "./templates/template1/template1";
+import Template1 from "../templates/template1/template1";
+import Template2 from "../templates/template2/template2";
 import ".//form.css";
-import Header from "./header/header";
+
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+
+
 
 
 export default function Form() {
+
+
+  const router1 = createBrowserRouter([
+    {
+      path: "cv/template1",
+      element:  <Template1
+  //     uploadedimage={imageu}
+  //     name={name}
+  //  website={website}
+  //  headline={headline}
+  //     email={email}
+  //    phone={phone}
+  //    aboutme={aboutme}
+    />,
+
+    },
+    {
+      path: "/template2",
+      element: <Template2 />,
+      
+    },
+  ]);
   
-  // const realimage = (
-  //   <img
-  //     src={imageu}
-  //     alt="Canvas Logo"
-  //   />
-  // );
 
   const [cv, setcv] = useState({
     image:
@@ -96,16 +121,12 @@ export default function Form() {
   return (
     <>
 
-
-<Header/>
-
-
       <div class="container-fluid">
         <div class="row ">
          
           <div className="col-4 bg-light p-0 m-0">
-          <details>
-          <summary className="text sidebar-toggles">&nbsp;Introduction</summary>
+          <details open>
+          <summary className="lead sidebar-toggles">&nbsp;Introduction</summary>
           <div className="p-4">
             <div class="row">
               <div class="col-5">
@@ -232,8 +253,8 @@ export default function Form() {
 
 
           <details>
-          <summary className="sidebar-toggles">&nbsp;Experience</summary>
-          <div className="p-4">
+          <summary className="lead active sidebar-toggles">&nbsp;Experience</summary>
+          <div className="p-4 active">
             
 
             <form>
@@ -311,22 +332,18 @@ export default function Form() {
 
           <div className="cvpreview col-8 overflow-auto">
 
-            <Template1
-              uploadedimage={imageu}
-              name={name}
-           website={website}
-           headline={headline}
-              email={email}
-             phone={phone}
-             aboutme={aboutme}
+          <React.StrictMode>
+<RouterProvider router={router1} />
+</React.StrictMode>
 
-              
-            />
+
+
+
+           
           </div>
         </div>
       </div>
 
-      <div class="p-3 text-center bg-dark text-white">© 2022 Copyrights <strong><a className="text-white" href="https://techlegion.ml">Tech Legion</a></strong> | All Rights Reserved</div>
     </>
   );
                   

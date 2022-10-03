@@ -2,30 +2,35 @@ import React, { useState } from 'react'
 import ".//template1style.css";
 import Experience from "./experience";
 
-
-
-
+// import { useRef } from 'react';
+// import { useReactToPrint } from 'react-to-print';
 
 export default function template1(props) {
 
 var website = "https://"+props.website+"?target=”_blank”";
 var email = "mailto:"+props.email;
 var phone = "tel:"+props.phone;
-//const website = useState(web);
- 
+
+//   const componentRef = useRef() ;
+//   const handlePrint = useReactToPrint({
+//   content: () => componentRef.current,
+//   documentTitle: 'emp-data',
+//   onAfterPrint: ()=> alert('Print success')
+
+// });
+
   return (
 
 
     <>
-<head>
-    <title>Simple Design | CV Design 01</title>
-    </head>
 
 
 
-    <body>
+{/*
+ref={componentRef} style={{width:100, height:window.innerHeight}}
+*/} 
 
-  {/**/} <div class="wrapper"> 
+<div class="wrapper"> 
         <div class="sidebar-wrapper">
             <div class="profile-container">
 
@@ -39,10 +44,8 @@ var phone = "tel:"+props.phone;
                     <li class="email"><i class="fa-solid fa-envelope"></i><a href={email}>{props.email}</a></li>
                     <li class="phone"><i class="fa-solid fa-phone"></i><a href={phone}>{props.phone}</a></li>
                     <li class="website"><i class="fa-solid fa-globe"></i><a href={website} target="_blank">{props.website}</a></li>
-                    <li class="linkedin"><i class="fa-brands fa-linkedin-in"></i><a href="#" target="_blank">linkedin.com/in/alandoe</a></li>
-                    <li class="github"><i class="fa-brands fa-github"></i><a href="#" target="_blank">github.com/username</a></li>
-                    <li class="twitter"><i class="fa-brands fa-twitter"></i><a href="https://twitter.com/3rdwave_themes" target="_blank">@twittername</a></li>
-                </ul>
+                    <li class="linkedin"><i class="fa-brands fa-linkedin-in"></i><a href="#" target="_blank">{props.city}</a></li>
+                   </ul>
             </div>
             <div class="education-container container-block">
                 <h2 class="container-block-title">Education</h2>
@@ -82,6 +85,11 @@ var phone = "tel:"+props.phone;
 
 
 
+
+
+
+
+
         <div className="main-wrapper">
         <section className="section summary-section">
           <h2 className="section-title">About Me</h2>
@@ -91,33 +99,11 @@ var phone = "tel:"+props.phone;
         </section>
         <section className="section experiences-section">
         <h2 className="section-title">Experiences</h2>
-          
-          <Experience jobtitle="test" startdate="11" enddate="end" company="company" desc="desc"/>
+        
 
-          <div className="item">
-            <div className="meta">
-              <div className="upper-row">
-                <h3 className="job-title">Senior Software Engineer</h3>
-                <div className="time">2018 - 2022</div>
-              </div>
-              <div className="company">Google, London</div>
-            </div>
-            <div className="details">
-              <p>Test Description</p>  
-            </div>
-          </div>
-          <div className="item">
-            <div className="meta">
-              <div className="upper-row">
-                <h3 className="job-title">UI Developer</h3>
-                <div className="time">2016 - 2018</div>
-              </div>
-              <div className="company">Amazon, London</div>
-            </div>
-            <div className="details">
-            <p>Test Description</p> 
-          </div>
-          </div>
+     <Experience jobtitle={props.designation} startdate={props.sdate} enddate={props.edate} company={props.company} desc={props.jobdesc}/>
+     
+             
         </section>
         <section className="section projects-section">
           <h2 className="section-title">Projects</h2>
@@ -185,20 +171,19 @@ var phone = "tel:"+props.phone;
       </div> 
     </div>
  
+
+ 
     
-        <div class="text-center">
-           
-     {    <small class="copyright">Designed with <i class="fa-solid fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
-}
+        <div style={{padding:15}} class="text-center">
+          
+<div>Designed with by <a href="http://techlegion.ml" target="_blank">Tech Legion</a> for {props.name}</div>
         </div>
-  
-        {/* */} 
-</body>
 
-
-    <div>
-    </div>
     </>
     
+
+
+    
     )
-}
+
+};

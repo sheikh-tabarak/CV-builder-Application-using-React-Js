@@ -6,51 +6,46 @@ import CLForm from './components/clform/clform';
 import Header from './components/header/header';
 import Footer from './components/header/footer';
 import router from './components/header/routers';
+import Template1 from './components/templates/template1/template1'
+import Template2 from './components/templates/template2/template2'
+import Example from './components/cvform/Example'
+
+//import data from "./components/cvform/Form";
+
 
 import {
-  createBrowserRouter,
-  RouterProvider,
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
 } from "react-router-dom";
 
 
-
 function App() {
-
-  const router = createBrowserRouter([
-    {
-      path: "/cv",
-      element: <CVForm />,
-
-    },
-    {
-      path: "/build-cover-letter",
-      element: <CLForm />,
-      
-    },
-  ]);
-
   return (
-    
-       <>
+       <>   
+<BrowserRouter> 
 
 <Header/>
-<React.StrictMode>
-<RouterProvider router={router} />
-</React.StrictMode>
+
+<Routes>
+      <Route path="/build-cv" element={<CVForm />}>
+      <Route
+          path="t1"
+          element={
+            <Template1/>
+          }
+        />
+        <Route path="t2" element={<Template2/>} />
+        </Route>
+
+      <Route path="/build-cl" element={<CLForm/>}/>
+
+    </Routes>
+
 <Footer/>
-       
-  {/* <Router> 
-    <Header/>
+</BrowserRouter>
 
-
-    <Routes>
-        <Route path='/' element={<CVForm/>}/> 
-        <Route path='/build-cover-letter' element={<CLForm/>}/>
-  
-  </Routes>
-
- <Footer/>
-  </Router> */}
     </>
     
   );

@@ -41,13 +41,13 @@ export default function header() {
 
 
       <li class="nav-item active ">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/">Resume</a>
+        <a class="nav-link" href="/build-cv">Resume</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/build-cover-letter">Cover Letter</a>
+        <a class="nav-link" href="/build-cl">Cover Letter</a>
       </li>
 
       {/* <ul class="list-group list-group-horizontal-sm ml-10">

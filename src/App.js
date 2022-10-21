@@ -24,12 +24,14 @@ import {
 function App() {
   return (
        <>   
-<BrowserRouter> 
+{/* <BrowserRouter>  */}
 
 <Header/>
+<CVForm/>
+<Footer/>
 
-<Routes>
-      <Route path="/build-cv" element={<CVForm />}>
+{/* <Routes> */}
+      {/* <Route path="/build-cv" element={<CVForm />}>
       <Route
           path="t1"
           element={
@@ -41,10 +43,10 @@ function App() {
 
       <Route path="/build-cl" element={<CLForm/>}/>
 
-    </Routes>
+    </Routes> 
 
 <Footer/>
-</BrowserRouter>
+</BrowserRouter>*/}
 
     </>
     

@@ -4,6 +4,8 @@ import * as React from "react";
 import Experience from "../templates/template1/experience";
 
 export class ComponentToPrint extends React.PureComponent {
+
+  
   constructor(props) {
     super(props);
 
@@ -14,21 +16,17 @@ export class ComponentToPrint extends React.PureComponent {
 
       image: props.uploadedimage,
       headline: props.headline,
-
       name: props.name,
       email: props.email,
       phone: props.phone,
       website: props.website,
       city: props.city,
-
       aboutme: props.aboutme,
-
       designation: props.designation,
       company: props.company,
       sdate: props.sdate,
       edate: props.edate,
       jobdesc: props.jobdesc,
-
       test: props.test,
     };
   }

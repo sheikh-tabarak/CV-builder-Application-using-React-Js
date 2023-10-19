@@ -16,6 +16,7 @@ import {
   Link,
   Outlet
 } from "react-router-dom";
+import downLoadPdf from "../configurations/downloading";
 
 
 const AddExperience = (value)=>{
@@ -27,6 +28,9 @@ const AddExperience = (value)=>{
 
 
 export default function Form() {
+const pdfRef = useRef();
+
+
 
   
 
@@ -165,11 +169,12 @@ const ChangeEDate= (event) => {
 
   return (
     <>
- 
-      <div class="container-fluid">
-        <div class="row">
-         
-          <div className="col-4 bg-light p-0 m-0">
+
+
+   <button onClick={()=>downLoadPdf(pdfRef)}>Download</button>
+      <div ref={pdfRef} class="container-fluid ">
+        <div class="row ">
+          <div className="col-4 bg-light p-0 m-0  overflow-scroll">
           
           <details open>
           <summary className="lead sidebar-toggles">&nbsp;Introduction</summary>
